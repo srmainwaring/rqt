@@ -2,6 +2,11 @@
 Changelog for package rqt
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add a test dependency on pytest. (`#306 <https://github.com/ros-visualization/rqt/issues/306>`_)
+* Contributors: Chris Lalancette
+
 1.5.0 (2023-12-26)
 ------------------
 

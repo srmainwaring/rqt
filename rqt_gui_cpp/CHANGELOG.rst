@@ -2,6 +2,9 @@
 Changelog for package rqt_gui_cpp
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 1.5.0 (2023-12-26)
 ------------------
 * Switch to target_link_libraries. (`#297 <https://github.com/ros-visualization/rqt/issues/297>`_)
