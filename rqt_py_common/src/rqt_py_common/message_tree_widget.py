@@ -31,8 +31,8 @@
 # POSSIBILITY OF SUCH DAMAGE.
 
 from python_qt_binding.QtCore import Slot, QMimeData, QModelIndex, Qt, qWarning
-from python_qt_binding.QtGui import QDrag, QIcon
-from python_qt_binding.QtWidgets import QAction, QHeaderView, QMenu, QTreeView
+from python_qt_binding.QtGui import QDrag, QIcon, QAction
+from python_qt_binding.QtWidgets import QHeaderView, QMenu, QTreeView
 
 
 class MessageTreeWidget(QTreeView):
