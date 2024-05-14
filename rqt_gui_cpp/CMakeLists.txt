@@ -19,12 +19,19 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic -fPIC)
 endif()
 
-# Qt5 boilerplate options from http://doc.qt.io/qt-5/cmake-manual.html
+# Qt5/Qt6 boilerplate options from https://doc.qt.io/qt-6/cmake-manual.html
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOMOC ON)
 
+if(MSVC)
+  set(QT_VERSION_MAJOR 5)
+  find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
+else()
+  find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
+  find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
+endif()
+
 find_package(pluginlib REQUIRED)
-find_package(Qt6 REQUIRED COMPONENTS Widgets)
 find_package(rclcpp REQUIRED)
 find_package(qt_gui_cpp REQUIRED)
 
@@ -52,7 +59,7 @@ target_link_libraries(${PROJECT_NAME} PUBLIC
 
 target_link_libraries(${PROJECT_NAME} PRIVATE
   pluginlib::pluginlib
-  Qt6::Widgets
+  Qt${QT_VERSION_MAJOR}::Widgets
 )
 
 install(
